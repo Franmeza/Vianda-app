@@ -11,13 +11,12 @@ const FullWidthHeader = () => {
     <>
       <Link
         href={"/catalog/checkout"}
-        className="w-full bg-gradient-to-br from-amber-300 via-amber-400 to-amber-500
-       flex flex-col justify-center   -mt-5 py-8 "
+        className="bg-gradient-to-br from-amber-300 via-amber-400 to-amber-500
+       flex flex-col justify-center mt-5 py-8 w-full "
       >
-        <div className="flex flex-col md:flex-row items-center justify-around gap-8 ">
-          <h2 className="text-white font-extrabold text-4xl md:text-4xl lg:text-5xl text-center min-w-full md:min-w-fit ">
-            Con hambre
-            <br className=" hidden md:block" /> y sin tiempo?
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          <h2 className="text-white font-extrabold text-center text-4xl md:text-4xl lg:text-5xl">
+            Con hambre y sin tiempo?
           </h2>
 
           <Image
@@ -27,9 +26,8 @@ const FullWidthHeader = () => {
             width={"300"}
             alt="banner image"
           />
-          <h2 className="text-slate-900 font-extrabold text-4xl md:text-4xl lg:text-5xl text-center min-w-full md:min-w-fit">
-            Te llevamos
-            <br className=" hidden md:block" /> el almuerzo.
+          <h2 className="text-slate-900 font-extrabold text-center text-4xl md:text-4xl lg:text-5xl">
+            Te llevamos el almuerzo.
           </h2>
         </div>
       </Link>
