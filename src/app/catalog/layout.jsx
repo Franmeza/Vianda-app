@@ -22,7 +22,7 @@ const layoutAdmin = ({ children }) => {
     }
   }
   return (
-    <div>
+    <div data-theme="viandapp">
       <NavBar tokenData={tokenData} />
       {children}
       <Footer tokenData={tokenData} />

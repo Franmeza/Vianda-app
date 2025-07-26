@@ -22,13 +22,11 @@ const layoutAdmin = ({ children }) => {
     }
   }
   return (
-    <>
-      <>
-        <NavAdmin tokenData={tokenData} />
-        {children}
-        <Footer />
-      </>
-    </>
+    <div data-theme="viandapp">
+      <NavAdmin tokenData={tokenData} />
+      {children}
+      <Footer />
+    </div>
   );
 };
 
