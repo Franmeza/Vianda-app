@@ -19,8 +19,15 @@ import Image from "next/image";
 const AdminViandasPage = async ({ searchParams }) => {
   let data = [];
 
-  const parameters = new URLSearchParams(searchParams);
-  const querytosend = "?" + parameters.toString();
+  // Await searchParams before using Object.entries
+  const resolvedSearchParams = await searchParams;
+  
+  // Convert searchParams object to URLSearchParams string
+  const params = new URLSearchParams();
+  Object.entries(resolvedSearchParams).forEach(([key, value]) => {
+    if (value) params.append(key, value);
+  });
+  const querytosend = params.toString() ? "?" + params.toString() : "";
 
   try {
     const url = `${process.env.LOCALHOST}/api/viandas${querytosend}`;
@@ -33,19 +40,19 @@ const AdminViandasPage = async ({ searchParams }) => {
   const totalCount = await prisma.Vianda.count({
     where: {
       nombre: {
-        contains: searchParams.search,
+        contains: resolvedSearchParams.search,
       },
-      tipo: searchParams.tipo,
-      descripcion: searchParams.descripcion,
+      tipo: resolvedSearchParams.tipo,
+      descripcion: resolvedSearchParams.descripcion,
       AND: [
         {
-          ingredientes: { contains: searchParams.ing1 },
+          ingredientes: { contains: resolvedSearchParams.ing1 },
         },
         {
-          ingredientes: { contains: searchParams.ing2 },
+          ingredientes: { contains: resolvedSearchParams.ing2 },
         },
         {
-          ingredientes: { contains: searchParams.ing3 },
+          ingredientes: { contains: resolvedSearchParams.ing3 },
         },
       ],
     },

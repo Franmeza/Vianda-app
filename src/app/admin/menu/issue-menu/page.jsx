@@ -9,8 +9,7 @@ import { useState, useEffect, useRef, useCallback } from "react"
 import { toPng } from "html-to-image"
 const MenuIssuePageAdmin = () => {
   const searchParams = useSearchParams()
-  const params = new URLSearchParams(searchParams)
-  const diaSolo = params.get("dia")
+  const diaSolo = searchParams.get("dia")
 
   let semana = ["lunes", "martes", "miercoles", "jueves", "viernes"]
 

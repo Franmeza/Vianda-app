@@ -14,8 +14,7 @@ import Image from "next/image"
 
 async function Homepage({searchParams}) {
 
-  const parameters = new URLSearchParams(searchParams);
-  const status = parameters.get("status")
+  const status = searchParams?.status;
   //Por si estamos volviendo desde mercado pago, leemos la query y en caso de que exista el status = approved
   // lo redireccionamos a mi cuenta.
   if( status === "approved"){

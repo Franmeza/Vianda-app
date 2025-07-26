@@ -18,8 +18,15 @@ import FilterUsers from "@/components/adminLayout/usuarios/FilterUsers";
 const UsuariosPageAdmin = async ({ searchParams }) => {
   let data = [];
 
-  const parameters = new URLSearchParams(searchParams);
-  const querytosend = "?" + parameters.toString();
+  // Await searchParams before using Object.entries
+  const resolvedSearchParams = await searchParams;
+  
+  // Convert searchParams object to URLSearchParams string
+  const params = new URLSearchParams();
+  Object.entries(resolvedSearchParams).forEach(([key, value]) => {
+    if (value) params.append(key, value);
+  });
+  const querytosend = params.toString() ? "?" + params.toString() : "";
 
   try {
     const url = `${process.env.LOCALHOST}/api/usuarios${querytosend}`;
