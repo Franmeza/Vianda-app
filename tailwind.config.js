@@ -5,36 +5,28 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  daisyui: {
-    //ACA SE HIZO MODIFICACION
-    extendes: {
-      container: {
-        center: true,
-        padding: "15px",
-      },
+  theme: {
+    container: {
+      center: true,
+      padding: "15px",
     },
+    extend: {},
+  },
+  daisyui: {
     themes: [
       "light",
       "dark",
       {
         viandapp: {
-          primary: "#FFE26C",
-
-          secondary: "#FFF369",
-
-          accent: "#7CC964",
-
-          neutral: "#383838",
-
+          "primary": "#FFE26C",
+          "secondary": "#FFF369",
+          "accent": "#7CC964",
+          "neutral": "#383838",
           "base-100": "#F3FAED",
-
-          info: "#a3e635",
-
-          success: "#36d399",
-
-          warning: "#F76353",
-
-          error: "#F76353",
+          "info": "#a3e635",
+          "success": "#36d399",
+          "warning": "#F76353",
+          "error": "#F76353",
         },
       },
     ],
